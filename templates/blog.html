@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Kalmax Productions</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-list { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 4rem; }
+        .blog-card { display: flex; gap: 3rem; align-items: flex-start; }
+        .blog-card img { width: 350px; border-radius: 8px; }
+        .blog-info h2 { font-size: 1.8rem; margin-bottom: 1.5rem; text-transform: none; letter-spacing: 1px;}
+        .blog-info p { opacity: 0.7; margin-bottom: 1.5rem; line-height: 1.8; }
+        .blog-info .date { font-size: 0.85rem; color: var(--accent-color); margin-bottom: 0.5rem; display: block; }
+        @media (max-width: 768px) { .blog-card { flex-direction: column; } .blog-card img { width: 100%; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">KALMAX PRODUCTIONS</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="section-padding" style="padding-top: 12rem;">
+        <h2 style="text-align: center; margin-bottom: 4rem;">The Blog</h2>
+        <div class="blog-list">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800" alt="Tech">
+                <div class="blog-info">
+                    <span class="date">MARCH 25, 2026</span>
+                    <h2>Mastering the Art of Natural Light</h2>
+                    <p>Understanding how light interacts with your subject is the foundation of great photography. Today we explore timing and directionality for best results.</p>
+                    <a href="#" style="color: var(--accent-color); text-transform: uppercase; font-size: 0.9rem; font-weight: 700;">Read More &rarr;</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800" alt="Nature">
+                <div class="blog-info">
+                    <span class="date">MARCH 10, 2026</span>
+                    <h2>The Quietude of Landscape Photography</h2>
+                    <p>Capturing a still landscape requires more than just a wide lens; it requires patience and a deep connection to the environment.</p>
+                    <a href="#" style="color: var(--accent-color); text-transform: uppercase; font-size: 0.9rem; font-weight: 700;">Read More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="padding: 4rem 5%; background: var(--secondary-bg); text-align: center; border-top: 1px solid var(--border-color);">
+        <p>&copy; 2026 Kalmax Productions. All rights reserved.</p>
+        <div style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.7; letter-spacing: 1.5px; text-transform: uppercase;">
+            Crafted by <a href="https://angaza-computes-co-ltd.vercel.app/" target="_blank" style="color: var(--accent-color); font-weight: 700;">Angaza Computecs</a> 
+            <span style="margin: 0 10px; opacity: 0.3;">|</span>
+            <a href="https://dancan-blog.vercel.app/" target="_blank" style="color: var(--accent-color);">Developer Blog</a>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+</body>
+</html>

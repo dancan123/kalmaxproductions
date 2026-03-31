@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+venv.bak/
+env.bak/
+.idea/
+.vscode/
+.antigravity/
+static/assets/maxwell.jpg (placeholder)
