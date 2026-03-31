@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalmax Productions | Professional Photography</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="loading">
+    <!-- Preloader -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <span class="loader-logo">KALMAX</span>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
     <nav>
         <div class="logo">KALMAX PRODUCTIONS</div>
         <ul class="nav-links">
@@ -25,24 +32,30 @@
         </div>
     </nav>
 
-    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&q=80&w=1920');">
+    <header class="hero">
+        <video class="hero-video" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&q=80&w=1920">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-photographer-taking-photos-of-a-landscape-34584-large.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
-            <h1>Capturing the Essence of Life</h1>
+            <p class="page-description" style="color: #fff; opacity: 0.8; margin-bottom: 2rem;">Kalmax Production House</p>
+            <h1>The Art of <br><span class="accent-serif-italic">Eternal Moments</span></h1>
             
-            <!-- Floating Photographer Profile (Reduced Size) -->
-            <div style="margin-bottom: 2.5rem; display: flex; flex-direction: column; align-items: center; animation: fadeIn 2s ease-out;">
-                <!-- User: Place your photographer photo in /static/assets/maxwell.jpg -->
-                <img src="https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=200" alt="Maxwell" style="width: 85px; height: 85px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; box-shadow: 0 5px 20px rgba(0,0,0,0.6);">
-                <span style="color: var(--accent-color); margin-top: 0.8rem; letter-spacing: 2px; font-weight: 500; text-transform: uppercase; font-size: 0.75rem; opacity: 0.9;">Maxwell • Lead Photographer</span>
+            <!-- Floating Photographer Profile -->
+            <div class="hero-profile">
+                <img src="https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=200" alt="Maxwell">
+                <span>Maxwell • Executive Producer</span>
             </div>
 
-            <p style="max-width: 600px; margin: 0 auto;">Every moment has a story. Let us tell yours through minimalist, professional photography.</p>
-            <a href="portfolio.html" class="btn">Explore My Work</a>
+            <p style="max-width: 600px; margin: 0 auto; font-size: 1.2rem; opacity: 0.9;">Crafting high-fidelity visual stories for brands that demand excellence.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 3rem;">
+                <a href="portfolio.html" class="btn">Explore Portfolio</a>
+                <a href="contact.html" class="btn" style="background: var(--accent-color); color: #000;">Secure Your Date</a>
+            </div>
         </div>
     </header>
 
     <section class="section-padding">
-        <h2 style="text-align: center; margin-bottom: 4rem;">Featured Work</h2>
+        <h2 class="section-title">Selected Works</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">
                 <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800" alt="Tech" loading="lazy">
@@ -64,6 +77,25 @@
                     <h3>Urban</h3>
                     <p>Capturing the city rhythm</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-color); border-top: 1px solid var(--border-color);">
+        <p class="page-description" style="text-align: center;">Partnerships</p>
+        <h2 class="section-title">The Experience</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center;">
+                <p style="font-style: italic; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">"Kalmax didn't just deliver photos; they delivered a brand identity. The intentionality in every shot is palpable."</p>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100" alt="Client" style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 1rem;">
+                <h4 style="font-family: var(--serif-font); color: var(--accent-color);">Sarah Jenkins</h4>
+                <p style="font-size: 0.8rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px;">Creative Director, Vogue Media</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="font-style: italic; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">"The cinematic approach to our corporate gala was beyond anything we've ever seen. Pure artistry."</p>
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100" alt="Client" style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 1rem;">
+                <h4 style="font-family: var(--serif-font); color: var(--accent-color);">David Chen</h4>
+                <p style="font-size: 0.8rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px;">Marketing Lead, TechGlobal</p>
             </div>
         </div>
     </section>
@@ -92,7 +124,9 @@
     </footer>
 
     <!-- WhatsApp Float -->
+    <!-- WhatsApp Float Re-branded -->
     <a href="https://wa.me/254720280171" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span class="whatsapp-text">Connect to the Studio</span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/></svg>
     </a>
 
