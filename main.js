@@ -10,13 +10,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            nav.style.padding = '1rem 5%';
-            nav.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+            nav.classList.add('scrolled');
+            if (window.innerWidth > 768) {
+                nav.style.padding = '1rem 5%';
+            } else {
+                nav.style.padding = '0.8rem 5%';
+            }
         } else {
-            nav.style.padding = '2rem 5%';
-            nav.style.backgroundColor = 'rgba(20, 20, 20, 0.85)';
+            nav.classList.remove('scrolled');
+            if (window.innerWidth > 768) {
+                nav.style.padding = '2rem 5%';
+            } else {
+                nav.style.padding = '1.5rem 5%';
+            }
         }
     });
+
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking links
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
 
     // Contact Form submission (Mock)
     const contactForm = document.getElementById('contact-form');
