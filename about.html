@@ -31,8 +31,9 @@
         .page-header {
             position: relative;
             background: url('assets/T32A8322.jpg') no-repeat center center/cover;
-            padding: 8rem 6% 6rem;
+            padding: 10rem 6% 8rem;
             text-align: center;
+            overflow: hidden;
         }
         .page-header::before {
             content: '';
@@ -40,6 +41,13 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.7);
             z-index: 1;
+        }
+        .page-header {
+            animation: kenburns 30s ease infinite alternate;
+        }
+        @keyframes kenburns {
+            0% { background-position: 50% 50%; background-size: 100%; }
+            100% { background-position: 50% 50%; background-size: 115%; }
         }
         .page-header * {
             position: relative;
@@ -72,6 +80,7 @@
     </nav>
 
     <header class="page-header">
+        <div class="page-header-bg" style="background-image: url('assets/T32A8322.jpg');"></div>
         <p class="page-description">The Studio</p>
         <h2 class="section-title">Behind the Lens</h2>
     </header>
