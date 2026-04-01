@@ -7,8 +7,8 @@
     --glass-bg: rgba(5, 5, 5, 0.0);
     --glass-scrolled: rgba(5, 5, 5, 0.95);
     --border-color: rgba(197, 160, 89, 0.12);
-    --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-fast: all 0.3s ease;
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.25s ease;
     --serif-font: 'Playfair Display', serif;
     --sans-font: 'Outfit', sans-serif;
 }

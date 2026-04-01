@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 body.classList.add('transitioning');
                 setTimeout(() => {
                     window.location.href = href;
-                }, 800);
+                }, 400);
             }
         });
     });
