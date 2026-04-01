@@ -244,27 +244,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 11. CONTACT FORM (Mock)
+    // 11. CONTACT FORM (AJAX for Formspree)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('.btn');
             const originalText = btn.innerHTML;
+            const status = document.createElement('div');
+            status.style.cssText = 'margin-top: 1rem; color: var(--accent-color); font-size: 0.8rem; letter-spacing: 1px;';
+            
             btn.innerHTML = 'Sending Brief...';
             btn.disabled = true;
 
-            setTimeout(() => {
-                btn.innerHTML = 'Sent Successfully';
-                btn.style.background = '#25D366';
-                contactForm.reset();
-                
+            const data = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: contactForm.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    btn.innerHTML = 'Sent Successfully';
+                    btn.style.background = '#25D366';
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = 'var(--accent-color)';
+                        btn.disabled = false;
+                    }, 4000);
+                } else {
+                    const result = await response.json();
+                    btn.innerHTML = 'Error Sending';
+                    btn.style.background = '#ff4d4d';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = 'var(--accent-color)';
+                        btn.disabled = false;
+                    }, 4000);
+                }
+            } catch (error) {
+                btn.innerHTML = 'Network Error';
+                btn.style.background = '#ff4d4d';
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.style.background = 'var(--accent-color)';
                     btn.disabled = false;
-                }, 3000);
-            }, 2000);
+                }, 4000);
+            }
         });
     }
 });
