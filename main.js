@@ -299,4 +299,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 12. PORTFOLIO FILTERING (The Stills)
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioGrid = document.getElementById('stills-grid');
+    
+    if (filterBtns.length > 0 && portfolioGrid) {
+        const items = portfolioGrid.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                // Animate transition: Fade Out -> Filter -> Fade In
+                items.forEach(item => {
+                    item.classList.add('fade-out');
+                    item.classList.remove('fade-in');
+                    
+                    setTimeout(() => {
+                        const category = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            item.classList.remove('hide-item');
+                            // Small delay to trigger the fade-in animation
+                            setTimeout(() => {
+                                item.classList.remove('fade-out');
+                                item.classList.add('fade-in');
+                            }, 50);
+                        } else {
+                            item.classList.add('hide-item');
+                        }
+                    }, 400); // Wait for fade-out to complete
+                });
+            });
+        });
+    }
 });

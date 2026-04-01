@@ -155,8 +155,18 @@
     <section class="section-padding" style="padding-top: 0;">
         <p class="page-description" style="text-align: center; margin-bottom: 2rem;">Curated Excellence</p>
         <h2 class="section-title">The Stills | <span class="accent-serif-italic">Curated Works</span></h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
+        
+        <!-- Filter UI -->
+        <div class="filter-controls" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 5rem; flex-wrap: wrap;">
+            <button class="filter-btn active" data-filter="all">All Works</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="portraits">Portraits</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="architecture">Architecture</button>
+        </div>
+
+        <div class="portfolio-grid" id="stills-grid">
+            <div class="portfolio-item" data-category="commercial">
                 <img src="assets/T32A7872.jpg"
                     alt="Production Work 1" loading="lazy">
                 <div class="portfolio-overlay">
@@ -165,7 +175,7 @@
                     <p style="opacity: 0.7; font-size: 0.9rem;">Modern lighting and product aesthetics.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-category="events">
                 <img src="assets/T32A7963.jpg"
                     alt="Production Work 2" loading="lazy">
                 <div class="portfolio-overlay">
@@ -174,7 +184,7 @@
                     <p style="opacity: 0.7; font-size: 0.9rem;">Stories told from a unique perspective.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-category="commercial">
                 <img src="assets/T32A8089.jpg"
                     alt="Production Work 3" loading="lazy">
                 <div class="portfolio-overlay">
@@ -183,7 +193,7 @@
                     <p style="opacity: 0.7; font-size: 0.9rem;">The soul of the runway meets the street.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-category="portraits">
                 <img src="assets/T32A8526.jpg"
                     alt="Production Work 4" loading="lazy">
                 <div class="portfolio-overlay">
@@ -192,7 +202,7 @@
                     <p style="opacity: 0.7; font-size: 0.9rem;">Capturing the depth in every gaze.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-category="events">
                 <img src="assets/T32A8560.jpg"
                     alt="Production Work 5" loading="lazy">
                 <div class="portfolio-overlay">
@@ -201,7 +211,7 @@
                     <p style="opacity: 0.7; font-size: 0.9rem;">Timeless celebrations and artistic heritage.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-category="architecture">
                 <img src="assets/T32A8632.jpg"
                     alt="Production Work 6" loading="lazy">
                 <div class="portfolio-overlay">
@@ -210,7 +220,7 @@
                     <p style="opacity: 0.7; font-size: 0.9rem;">Geometric perfection in every structure.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-category="commercial">
                 <img src="assets/T32A8473.jpg"
                     alt="Production Work 7" loading="lazy">
                 <div class="portfolio-overlay">
@@ -219,7 +229,7 @@
                     <p style="opacity: 0.7; font-size: 0.9rem;">Where shadows tell the story.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-category="commercial">
                 <img src="assets/T32A8240.jpg"
                     alt="Production Work 8" loading="lazy">
                 <div class="portfolio-overlay">
@@ -228,7 +238,7 @@
                     <p style="opacity: 0.7; font-size: 0.9rem;">High-tech visuals for high-end brands.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-category="architecture">
                 <img src="assets/T32A8592.jpg"
                     alt="Production Work 9" loading="lazy">
                 <div class="portfolio-overlay">

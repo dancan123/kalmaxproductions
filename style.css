@@ -764,6 +764,72 @@ body.js-enabled .reveal-init:not(.revealed) {
     100% { transform: scale(1); opacity: 1; }
 }
 
+
+/* FILTER UI STYLING */
+.filter-controls {
+    margin-bottom: 5rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: var(--main-font);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    opacity: 0.4;
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    width: 0; height: 1px;
+    background: var(--accent-color);
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-50%);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.filter-btn.active::after {
+    width: 100%;
+}
+
+.portfolio-item {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-item.hide-item {
+    display: none;
+}
+
+.portfolio-item.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.portfolio-item.fade-in {
+    opacity: 1;
+    transform: scale(1);
+    animation: portfolioFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes portfolioFadeIn {
+    from { opacity: 0; transform: scale(0.95) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 /* BEFORE/AFTER SLIDER FIXES */
 .ba-before img {
     max-width: none !important;
