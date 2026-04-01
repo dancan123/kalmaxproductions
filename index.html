@@ -47,8 +47,8 @@
     </nav>
 
     <header class="hero">
-        <video class="hero-video" autoplay loop muted playsinline
-            poster="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&q=80&w=1920">
+        <video class="hero-video" autoplay loop muted playsinline fetchpriority="high"
+            poster="assets/T32A8526.jpg">
             <source
                 src="https://assets.mixkit.co/videos/preview/mixkit-photographer-taking-photos-of-a-landscape-34584-large.mp4"
                 type="video/mp4">
@@ -168,7 +168,7 @@
         <div class="portfolio-grid" id="stills-grid">
             <div class="portfolio-item" data-category="commercial">
                 <img src="assets/T32A7872.jpg"
-                    alt="Production Work 1" loading="lazy">
+                    alt="Production Work 1" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Commercial</p>
                     <h3>Cinematic Vision</h3>
@@ -177,7 +177,7 @@
             </div>
             <div class="portfolio-item" data-category="events">
                 <img src="assets/T32A7963.jpg"
-                    alt="Production Work 2" loading="lazy">
+                    alt="Production Work 2" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Documentary</p>
                     <h3>Cultural Pulse</h3>
@@ -186,7 +186,7 @@
             </div>
             <div class="portfolio-item" data-category="commercial">
                 <img src="assets/T32A8089.jpg"
-                    alt="Production Work 3" loading="lazy">
+                    alt="Production Work 3" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Fashion</p>
                     <h3>Urban Essence</h3>
@@ -195,7 +195,7 @@
             </div>
             <div class="portfolio-item" data-category="portraits">
                 <img src="assets/T32A8526.jpg"
-                    alt="Production Work 4" loading="lazy">
+                    alt="Production Work 4" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Portraits</p>
                     <h3>Soul in Frame</h3>
@@ -204,7 +204,7 @@
             </div>
             <div class="portfolio-item" data-category="events">
                 <img src="assets/T32A8560.jpg"
-                    alt="Production Work 5" loading="lazy">
+                    alt="Production Work 5" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Events</p>
                     <h3>Legacy Moments</h3>
@@ -213,7 +213,7 @@
             </div>
             <div class="portfolio-item" data-category="architecture">
                 <img src="assets/T32A8632.jpg"
-                    alt="Production Work 6" loading="lazy">
+                    alt="Production Work 6" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Architecture</p>
                     <h3>Lines of Design</h3>
@@ -222,7 +222,7 @@
             </div>
             <div class="portfolio-item" data-category="commercial">
                 <img src="assets/T32A8473.jpg"
-                    alt="Production Work 7" loading="lazy">
+                    alt="Production Work 7" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Editorial</p>
                     <h3>Artistic Light</h3>
@@ -231,7 +231,7 @@
             </div>
             <div class="portfolio-item" data-category="commercial">
                 <img src="assets/T32A8240.jpg"
-                    alt="Production Work 8" loading="lazy">
+                    alt="Production Work 8" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Modern</p>
                     <h3>Sleek Reality</h3>
@@ -240,7 +240,7 @@
             </div>
             <div class="portfolio-item" data-category="architecture">
                 <img src="assets/T32A8592.jpg"
-                    alt="Production Work 9" loading="lazy">
+                    alt="Production Work 9" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <p class="page-description" style="color: var(--accent-color); font-size: 0.7rem;">Landscape</p>
                     <h3>Wanderlust</h3>
@@ -261,6 +261,7 @@
             <div style="flex: 1.2; min-width: 350px;">
                 <img src="assets/T32A8014.jpg" 
                     alt="Editorial Vibe Spotlight"
+                    loading="lazy" decoding="async"
                     style="width: 100%; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
             </div>
             <div style="flex: 1; min-width: 350px;">
@@ -498,19 +499,21 @@
     <!-- Formspree Formbutton Widget -->
     <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
     <script>
-      window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
-      formbutton("create", {
-        action: "https://formspree.io/f/mkopzgpe",
-        title: "How can we help?",
-        fields: [
-          { type: "email", label: "Email:", name: "email", required: true, placeholder: "your@email.com" },
-          { type: "textarea", label: "Message:", name: "message", placeholder: "Tell us about your production vision..." },
-          { type: "submit" }      
-        ],
-        styles: {
-          title: { backgroundColor: "#333" },
-          button: { backgroundColor: "#333" }
-        }
+      window.addEventListener('load', () => {
+        window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+        formbutton("create", {
+          action: "https://formspree.io/f/mkopzgpe",
+          title: "How can we help?",
+          fields: [
+            { type: "email", label: "Email:", name: "email", required: true, placeholder: "your@email.com" },
+            { type: "textarea", label: "Message:", name: "message", placeholder: "Tell us about your production vision..." },
+            { type: "submit" }      
+          ],
+          styles: {
+            title: { backgroundColor: "#333" },
+            button: { backgroundColor: "#333" }
+          }
+        });
       });
     </script>
     <script>
