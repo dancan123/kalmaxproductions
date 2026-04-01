@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal | Kalmax Productions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        .login-wrap { min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+        .login-card { background: var(--secondary-bg); border: 1px solid var(--border-color); padding: 4rem; max-width: 500px; width: 100%; text-align: center; border-radius: 4px; }
+        .login-card h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .login-card p { opacity: 0.6; margin-bottom: 3rem; font-size: 0.9rem; }
+        input { background: #000; border: 1px solid var(--border-color); padding: 1.2rem; color: #fff; width: 100%; margin-bottom: 2rem; border-radius: 2px; }
+        .progress-track { margin-top: 5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .track-bar { height: 2px; background: rgba(255,255,255,0.1); width: 100%; position: relative; margin: 4rem 0; }
+        .track-node { position: absolute; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background: var(--border-color); border-radius: 50%; }
+        .track-node.active { background: var(--accent-color); box-shadow: 0 0 10px var(--accent-color); }
+        .track-node span { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 0.7rem; opacity: 0.5; letter-spacing: 1px; text-transform: uppercase; }
+    </style>
+</head>
+<body class="loading">
+    <div class="film-grain"></div>
+    <nav>
+        <div class="logo">KALMAX <span style="font-weight: 300;">PRODUCTIONS</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-wrap">
+        <div class="login-card">
+            <p class="page-description">Private Zone</p>
+            <h2>Client Portal</h2>
+            <p>Please enter your unique project password to view your gallery and track progress.</p>
+            <input type="password" placeholder="Enter Password">
+            <button class="btn" style="width: 100%;">Access Gallery</button>
+            
+            <div style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.4;">
+                Having trouble? <a href="contact.html" style="text-decoration: underline;">Contact Studio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Progress Example -->
+    <div class="progress-track reveal-init">
+        <p class="page-description" style="text-align: center;">Production Pipeline</p>
+        <div class="track-bar">
+            <div class="track-node active" style="left: 0;"><span>Booking</span></div>
+            <div class="track-node active" style="left: 33%;"><span>Shooting</span></div>
+            <div class="track-node" style="left: 66%;"><span>Editing</span></div>
+            <div class="track-node" style="left: 100%;"><span>Delivery</span></div>
+            <div style="position: absolute; height: 100%; width: 33%; background: var(--accent-color); top: 0; left: 0;"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
